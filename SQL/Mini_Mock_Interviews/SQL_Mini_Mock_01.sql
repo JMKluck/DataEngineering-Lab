@@ -27,13 +27,25 @@ VALUES
 
 -- =====================================
 -- SQL MINI MOCK - QUESTION 1
---  * All columns from the visits table.
---  * Only records where visit_id is greater than 3.
---  * Results sorted by visit_id in descending order.
--- =====================================s
-
+-- * All columns from the visits table.
+-- * Only records where visit_id is greater than 3.
+-- * Results sorted by visit_id in descending order.
+-- =====================================
 SELECT *
 FROM visits
-WHERE visit_id > 3 
+WHERE visit_id > 3
 ORDER BY visit_id DESC; 
--- LIMIT 5 
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 2
+-- * Display patient_name, department, and visit_cost.
+-- * Retrieve only Cardiology patients.
+-- * Sort visit_cost from highest to lowest.
+-- =====================================
+SELECT
+      patient_name
+    , department 
+    , visit_cost 
+FROM visits 
+WHERE department = 'Cardiology'
+ORDER BY visit_cost DESC;
