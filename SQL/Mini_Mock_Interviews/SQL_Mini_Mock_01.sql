@@ -25,6 +25,15 @@ VALUES
 (7, 'Grace', '2026-11-07', 'Orthopedics', 400.00),
 (8, 'Henry', '2026-11-08', 'Neurology', 500.00);
 
+-- =====================================
+-- SQL MINI MOCK - QUESTION 1
+--  * All columns from the visits table.
+--  * Only records where visit_id is greater than 3.
+--  * Results sorted by visit_id in descending order.
+-- =====================================s
+
 SELECT *
 FROM visits
-ORDER BY visit_id;
+WHERE visit_id > 3 
+ORDER BY visit_id DESC; 
+-- LIMIT 5 
