@@ -49,3 +49,19 @@ SELECT
 FROM visits 
 WHERE department = 'Cardiology'
 ORDER BY visit_cost DESC;
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 3
+-- * Calculate total number of visits.
+-- * Calculate total visit costs.
+-- * Calculate average visit cost.
+-- * Calculate highest visit cost.
+-- * Calculate lowest visit cost.
+-- =====================================
+SELECT 
+      COUNT(visit_id) AS total_visits
+    , SUM(visit_cost) AS total_cost
+    , ROUND(AVG(visit_cost), 2) AS average_cost
+    , MAX(visit_cost) AS highest_cost
+    , MIN(visit_cost) AS lowest_cost 
+FROM visits;
