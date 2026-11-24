@@ -134,6 +134,28 @@ GROUP BY department
 HAVING (SUM(visit_cost) > 500) 
 ORDER BY total_cost DESC; 
 
-
+-- =====================================
+-- SQL MINI MOCK - QUESTION 7
+-- ** Display visit_id, patient_name,
+--   department, and visit_cost.
+-- * Calculate the overall average visit cost
+--   using a subquery.
+-- * Retrieve visits costing more than average.
+-- * Do not hardcode the average cost.
+-- * Sort visit cost from highest to lowest.
+-- =====================================
+SELECT 
+	  visit_id
+	, patient_name
+	, department
+	, visit_cost
+	, (SELECT ROUND(AVG(visit_cost), 2)
+       FROM visits) AS average_cost
+FROM visits
+WHERE visit_cost > (
+	SELECT AVG(visit_cost)
+	FROM visits
+	)
+ORDER BY visit_cost DESC; 
 
 
