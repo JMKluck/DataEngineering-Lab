@@ -158,4 +158,34 @@ WHERE visit_cost > (
 	)
 ORDER BY visit_cost DESC; 
 
+SELECT *
+FROM visits
+ORDER BY visit_id;
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 8
+-- * Create a CTE named hospital_average.
+-- * Calculate the overall average visit cost.
+-- * Display visit_id, patient_name,
+--   department, visit_cost, and average_cost.
+-- * Retrieve visits costing more than average.
+-- * Round displayed average to 2 decimal places.
+-- * Sort visit cost from highest to lowest.
+-- * Do not hardcode the average cost.
+-- =====================================
+
+WITH hospital_average AS (
+	SELECT AVG(visit_cost) AS average_cost
+	FROM visits
+)
+SELECT 
+     visit_id
+    , patient_name
+    , department
+    , visit_cost
+    , ROUND(average_cost, 2) AS average_cost
+FROM visits
+CROSS JOIN hospital_average
+WHERE visit_cost > average_cost
+ORDER BY visit_cost DESC; 
 
