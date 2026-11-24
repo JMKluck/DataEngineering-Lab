@@ -84,10 +84,29 @@ FROM visits;
 SELECT 
 	department
 	, COUNT(visit_id) AS total_visits
-	, SUM(visit_cost) as total_cost
-	, ROUND(AVG(visit_cost), 2) as average_cost 
+	, SUM(visit_cost) AS total_cost
+	, ROUND(AVG(visit_cost), 2) AS average_cost 
 FROM visits
 GROUP BY department 
 ORDER BY total_cost DESC; 
 
-
+-- =====================================
+-- SQL MINI MOCK - QUESTION 5
+-- ** Display each department.
+-- * Calculate total visits per department.
+-- ** Calculate total cost per department.
+-- ** Calculate average cost per department.
+-- ** Round average cost to 2 decimal places.
+-- * Include only departments with total cost
+--   greater than 800.
+-- * Sort total cost from highest to lowest.
+-- =====================================
+SELECT 
+	department 
+	, COUNT(visit_id) AS total_visits
+	, SUM(visit_cost) AS total_cost
+	, ROUND(AVG(visit_cost), 2) AS average_cost 
+FROM visits 
+GROUP BY department 
+HAVING (SUM(visit_cost) > 800)
+ORDER BY total_cost DESC; 
