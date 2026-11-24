@@ -28,6 +28,13 @@ VALUES
 -- =====================================
 -- SQL MINI MOCK - QUESTION 1
 -- * All columns from the visits table.
+-- =====================================
+SELECT *
+FROM visits;
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 1
+-- * All columns from the visits table.
 -- * Only records where visit_id is greater than 3.
 -- * Results sorted by visit_id in descending order.
 -- =====================================
@@ -35,7 +42,6 @@ SELECT *
 FROM visits
 WHERE visit_id > 3
 ORDER BY visit_id DESC; 
-
 -- =====================================
 -- SQL MINI MOCK - QUESTION 2
 -- * Display patient_name, department, and visit_cost.
@@ -65,3 +71,23 @@ SELECT
     , MAX(visit_cost) AS highest_cost
     , MIN(visit_cost) AS lowest_cost 
 FROM visits;
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 4
+-- * Display each department.
+-- * Calculate total visits per department.
+-- * Calculate total cost per department.
+-- * Calculate average cost per department.
+-- * Round average cost to 2 decimal places.
+-- * Sort total cost from highest to lowest.
+-- =====================================
+SELECT 
+	department
+	, COUNT(visit_id) AS total_visits
+	, SUM(visit_cost) as total_cost
+	, ROUND(AVG(visit_cost), 2) as average_cost 
+FROM visits
+GROUP BY department 
+ORDER BY total_cost DESC; 
+
+
