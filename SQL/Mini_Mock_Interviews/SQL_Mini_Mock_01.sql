@@ -110,3 +110,30 @@ FROM visits
 GROUP BY department 
 HAVING (SUM(visit_cost) > 800)
 ORDER BY total_cost DESC; 
+
+-- =====================================
+-- SQL MINI MOCK - QUESTION 6
+-- ** Display each department.
+-- ** Include individual visits costing over 200.
+-- ** Calculate total qualifying visits.
+-- ** Calculate total qualifying visit costs.
+-- * Calculate average qualifying visit cost.
+-- * Round average cost to 2 decimal places.
+-- * Include departments with total qualifying
+--   visit costs greater than 500.
+-- * Sort total cost from highest to lowest.
+-- =====================================
+SELECT 
+	department
+	, COUNT(visit_id) AS total_visits
+	, SUM(visit_cost) AS total_cost
+	, ROUND(AVG(visit_cost), 2) AS average_cost
+FROM visits 
+WHERE visit_cost > 200
+GROUP BY department 
+HAVING (SUM(visit_cost) > 500) 
+ORDER BY total_cost DESC; 
+
+
+
+
