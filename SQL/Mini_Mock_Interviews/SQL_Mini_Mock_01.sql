@@ -1,3 +1,20 @@
+-- =====================================================
+-- Project: Healthcare SQL Analytics Practice
+-- Author: Gerald (Jerry) Kluck, Jr.
+-- Database: PostgreSQL
+--
+-- Description:
+-- Demonstrates SQL queries, filtering, aggregations,
+-- GROUP BY, HAVING, subqueries, CTEs, and CROSS JOIN.
+--
+-- Dataset: Synthetic data for educational purposes.
+-- No real patient information is included.
+--
+-- Warning: Run in a practice database only.
+-- This script drops and recreates the visits table.
+-- =====================================================
+
+
 DROP TABLE IF EXISTS visits;
 
 CREATE TABLE visits (
