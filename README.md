@@ -30,6 +30,26 @@ I am currently pursuing Data Engineering and AI Engineering through hands-on tra
 - Centralized PostgreSQL server configuration
 - Remote database connectivity
 - Cross-machine development environment
+  
+### JerryNAS — Personal Data Infrastructure
+
+Designed, configured, and deployed a personal data
+infrastructure environment using a Synology DS925+ NAS.
+
+- Implemented redundant storage using Synology Hybrid RAID (SHR-1).
+- Configured centralized file storage and remote access.
+- Organized datasets, SQL scripts, Python projects,
+  and AI development resources.
+- Implemented UPS power protection.
+
+#### Future Development — Planned
+
+- AI-powered file search and document retrieval.
+- Intelligent data classification and organization.
+- Automated data processing workflows.
+- Integration with AI agents and Retrieval-Augmented Generation (RAG).
+
+
 
 ### Python
 - Foundational programming
